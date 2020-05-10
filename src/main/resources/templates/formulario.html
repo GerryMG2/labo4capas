@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Agregar producto</h1>
+<form id="usrform" action="#" th:action="@{/producto}" th:object="${producto}" method="post">
+ <p>
+ 	codigo: <input type="text" th:field="*{codigo}">
+ </p>
+ <span th:errors="*{codigo}" style="color: #FF0000"></span>
+ <p>
+ 	nombre: <input type="text" th:field="*{nombre}">
+ </p>
+ <span th:errors="*{nombre}" style="color: #FF0000"></span>
+  <p>
+ 	marca: <input type="text" th:field="*{marca}">
+ </p>
+ <span th:errors="*{marca}" style="color: #FF0000"></span>
+ <p>
+ 	<textarea rows="4" cols="50" th:field="*{descripcion}" form="usrform" />
+ </p>
+ <span th:errors="*{descripcion}" style="color: #FF0000"></span>
+ <p>
+ 	existencias: <input type="number" th:field="*{existencias}">
+ </p>
+ <span th:errors="*{existencias}" style="color: #FF0000"></span>
+ 
+  <p>
+ 	fechaingreso: <input type="date" th:field="*{fecha}">
+ </p>
+ <span th:errors="*{fecha}" style="color: #FF0000"></span>
+ <p>
+ 	<input type="submit" value="Enviar"><input type="reset" value="borrar">
+ </p>
+ 
+</form>
+
+</body>
+</html>
